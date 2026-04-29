@@ -12,10 +12,11 @@ jobs:
                 node_version: '20'
             - name: install dependencies
               run: npm ci
-            - name: run test
+            - name: run test    
               run: npm test
 
-    deploy: 
+    deploy:
+        needs: test 
         runs-on: ubuntu-latest
         steps:
             - name: get code
